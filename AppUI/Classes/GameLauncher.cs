@@ -208,12 +208,12 @@ namespace AppUI.Classes
             ReShadeUpdater.Cleanup();
 
             Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.VerifyingInstalledGameIsCompatible));
-            if (converter.IsGamePirated())
+            /*if (converter.IsGamePirated())
             {
                 Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.ErrorCodeYarr), NLog.LogLevel.Error);
                 Logger.Info(FileUtils.ListAllFiles(converter.InstallPath));
                 return false;
-            }
+            }*/
 
             Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.CreatingMissingRequiredDirectories));
             converter.CreateMissingDirectories();
@@ -246,7 +246,7 @@ namespace AppUI.Classes
                 if (new FileInfo(Sys.Settings.FF7Exe).Name.Equals("ff7.exe", StringComparison.InvariantCultureIgnoreCase))
                 {
                     // only compare exes are different if ff7.exe set in Settings (and not something like ff7_bc.exe)
-                    if (converter.IsExeDifferent())
+                    /*if (converter.IsExeDifferent())
                     {
                         Instance.RaiseProgressChanged($"\t{ResourceHelper.Get(StringKey.Ff7ExeDetectedToBeDifferent)}");
                         if (converter.BackupExe(backupFolderPath))
@@ -313,7 +313,7 @@ namespace AppUI.Classes
                 {
                     Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.FailedToFindGameDisc), NLog.LogLevel.Error);
                     return false;
-                }
+                }*/
 
                 //
                 // Update Registry with new launch settings
@@ -449,6 +449,7 @@ namespace AppUI.Classes
                 Sys.FFNxConfig.Backup(true);
                 Sys.FFNxConfig.OverrideInternalKeys(debug);
                 Sys.FFNxConfig.Save();
+
             }
 
             //
