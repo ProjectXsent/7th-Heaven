@@ -157,7 +157,7 @@ namespace AppUI.Classes
             return ret;
         }
 
-        public bool IsGamePirated()
+        /*public bool IsGamePirated()
         {
             string[] foldersToExclude = new string[] { "The_Reunion", "mods", "direct" }; // folders to skip in check
 
@@ -270,7 +270,7 @@ namespace AppUI.Classes
             }
 
             return false;
-        }
+        }*/
 
         /// <summary>
         /// Checks all files, folders, and sub-folders for signs of pirated files 
