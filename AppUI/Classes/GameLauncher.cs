@@ -208,12 +208,12 @@ namespace AppUI.Classes
             ReShadeUpdater.Cleanup();
 
             Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.VerifyingInstalledGameIsCompatible));
-            if (converter.IsGamePirated())
+            /*if (converter.IsGamePirated())
             {
                 Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.ErrorCodeYarr), NLog.LogLevel.Error);
                 Logger.Info(FileUtils.ListAllFiles(converter.InstallPath));
                 return false;
-            }
+            }*/
 
             Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.CreatingMissingRequiredDirectories));
             converter.CreateMissingDirectories();
@@ -243,7 +243,7 @@ namespace AppUI.Classes
             if (Sys.Settings.FF7InstalledVersion == FF7Version.Original98)
             {
                 Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.VerifyingFf7Exe));
-                if (new FileInfo(Sys.Settings.FF7Exe).Name.Equals("ff7.exe", StringComparison.InvariantCultureIgnoreCase))
+                /*if (new FileInfo(Sys.Settings.FF7Exe).Name.Equals("ff7.exe", StringComparison.InvariantCultureIgnoreCase))
                 {
                     // only compare exes are different if ff7.exe set in Settings (and not something like ff7_bc.exe)
                     if (converter.IsExeDifferent())
@@ -283,11 +283,11 @@ namespace AppUI.Classes
                         Instance.RaiseProgressChanged($"\t{ResourceHelper.Get(StringKey.FailedToCreateBackupOfFf7ConfigExe)}", NLog.LogLevel.Error);
                         return false;
                     }
-                }
+                }*/
             }
 
             // Auto-patch for 4GB support
-            Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.App4GBPatchRequired));
+            /*Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.App4GBPatchRequired));
             PEFile file = PEFile.FromFile(Sys.Settings.FF7Exe);
             if (!file.FileHeader.Characteristics.HasFlag(AsmResolver.PE.File.Headers.Characteristics.LargeAddressAware))
             {
@@ -295,14 +295,14 @@ namespace AppUI.Classes
                 file.FileHeader.Characteristics |= Characteristics.LargeAddressAware;
                 file.Write(Sys.Settings.FF7Exe);
                 Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.App4GBPatchApplied));
-            }
+            }*/
 
             //
             // Get Drive Letter and update registry
             //
             if (Sys.Settings.FF7InstalledVersion == FF7Version.Original98)
             {
-                Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.LookingForGameDisc));
+                /*Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.LookingForGameDisc));
                 Instance.DriveLetter = GetDriveLetter();
 
                 if (!string.IsNullOrEmpty(Instance.DriveLetter))
@@ -313,7 +313,7 @@ namespace AppUI.Classes
                 {
                     Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.FailedToFindGameDisc), NLog.LogLevel.Error);
                     return false;
-                }
+                }*/
 
                 //
                 // Update Registry with new launch settings
