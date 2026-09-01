@@ -520,7 +520,7 @@ namespace AppUI.ViewModels
                     if (
                         !isRunningInWine && // are we on Windows?
                         (
-                            (Directory.Exists(Path.Combine(ff7path, "music/vgmstream")) && Directory.EnumerateFiles(Path.Combine(ff7path, "music/vgmstream"), "*.ogg").Any()) || // did it inherit the original soundtrack?
+                            //(Directory.Exists(Path.Combine(ff7path, "music/vgmstream")) && Directory.EnumerateFiles(Path.Combine(ff7path, "music/vgmstream"), "*.ogg").Any()) || // did it inherit the original soundtrack?
                             Path.Exists(Path.Combine(ff7path, "ff7_en.exe")) || // did it inherit the original Steam exe?
                             Path.Exists(Path.Combine(ff7path, "firewall_entry.vdf")) || // did it inherit misc Steam files?
                             Path.Exists(Path.Combine(ff7path, "AF3DN.P")) // did it inherit offical Steam driver?
