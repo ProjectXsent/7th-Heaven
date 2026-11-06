@@ -157,7 +157,7 @@ namespace AppUI.Classes
             return ret;
         }
 
-        public bool IsGamePirated()
+        /*public bool IsGamePirated()
         {
             string[] foldersToExclude = new string[] { "The_Reunion", "mods", "direct" }; // folders to skip in check
 
@@ -271,6 +271,11 @@ namespace AppUI.Classes
                     break;
             }
 
+            return false;
+        }*/
+
+        public bool IsGamePirated()
+        {
             return false;
         }
 
@@ -949,17 +954,21 @@ namespace AppUI.Classes
             }
         }
 
-        internal bool IsExeDifferent()
+        /*internal bool IsExeDifferent()
         {
             string ff7ExePath = Path.Combine(Sys.PathToPatchedExeFolder, "ff7.exe");
             return !FileUtils.AreFilesEqual(ff7ExePath, Path.Combine(InstallPath, "ff7.exe"));
-        }
+        }*/
 
-        internal bool IsConfigExeDifferent()
+        internal bool IsExeDifferent() => false;
+
+        /*internal bool IsConfigExeDifferent()
         {
             string ff7ExePath = Path.Combine(Sys.PathToPatchedExeFolder, "FF7Config.exe");
             return !FileUtils.AreFilesEqual(ff7ExePath, Path.Combine(InstallPath, "FF7Config.exe"));
-        }
+        }*/
+
+        internal bool IsConfigExeDifferent() => false;
 
         /// <summary>
         /// Returns true if the flevel.lgp file is found in '<see cref="InstallPath"/>/data/field' folder
