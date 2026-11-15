@@ -349,11 +349,11 @@ namespace AppUI.Classes
                 {
                     Instance.RaiseProgressChanged($"{ResourceHelper.Get(StringKey.FoundGameDiscAt)} {Instance.DriveLetter} ...");
                 }
-                else
+                /*else
                 {
                     Instance.RaiseProgressChanged(ResourceHelper.Get(StringKey.FailedToFindGameDisc), NLog.LogLevel.Error);
                     return false;
-                }
+                }*/
 
                 //
                 // Update Registry with new launch settings
